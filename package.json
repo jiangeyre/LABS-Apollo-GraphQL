@@ -1,7 +1,7 @@
 {
   "name": "labs-apollo-graphql",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the code that I did following along with Will Ward's Full-Stack Apollo GraphQL with React and Node",
   "main": "index.js",
   "scripts": {
     "server": "cd server && nodemon index.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/jiangeyre/LABS-Apollo-GraphQL.git"
   },
-  "author": "",
+  "author": "Lexie Jiang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jiangeyre/LABS-Apollo-GraphQL/issues"
