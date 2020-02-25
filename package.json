@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jiangeyre/LABS-Apollo-GraphQL#readme",
   "dependencies": {
+    "apollo-datasource": "^0.7.0",
     "apollo-datasource-rest": "^0.7.0",
     "apollo-server": "^2.10.1",
     "graphql": "^14.6.0",

@@ -4,6 +4,8 @@ module.exports = {
         dataSources.quakeAPI.getAllQuakes(),
       quake: (_, { id }, { dataSources }) =>
         dataSources.quakeAPI.getQuakeById({ quakeId: id }),
+      users: (_, __, { dataSources }) => 
+        dataSources.userAPI.getUsers()
       // me: (_, __, { dataSources }) => dataSources.userAPI.findOrCreateUser()
     }
 };

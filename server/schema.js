@@ -4,6 +4,7 @@ const typeDefs = gql`
     type Query {
         quakes: [Quake]!
         quake(id: ID!): Quake
+        users: [User]
         me: User
     }
     
