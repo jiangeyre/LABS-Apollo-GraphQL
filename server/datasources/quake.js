@@ -1,15 +1,21 @@
-const fetch = require('node-fetch');
+const { RESTDataSource } = require('apollo-datasource-rest');
 
-const url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02";
+class QuakeAPI extends RESTDataSource {
+    constructor() {
+        super();
+        this.baseURL = 'https://earthquake.usgs.gov/fdsnws/event/1/';
+    }
 
-fetch(url)
-    .then(function(res) {
-        return res.json();
-    })
-    .then(function(quakedata) {
-        console.log(quakedata.features[0]);
+    async getAllQuakes() {
+        const query = "query?format=geojson&starttime=2014-01-01&endtime=2014-01-02";
+        const response = await this.get(query);
+        return Array.isArray(response.features)
+          ? response.features.map(quake => this.quakeReducer(quake))
+          : [];
+    }
 
-        const quake = quakedata.features[0];
+    quakeReducer(quake) {
+
         const date = new Date(quake.properties.time)
         const year = date.getFullYear();
         const month = monthName(date.getMonth());
@@ -37,12 +43,15 @@ fetch(url)
             }
             return monthLegend[ind];
         };
-        const customData = {
+
+        return {
             magnitude: quake.properties.mag,
             location: quake.properties.place,
             when: dateString,
             time: quake.properties.time,
             id: quake.id
         };
-        console.log(customData);
-    });
+    }
+}
+
+module.exports = QuakeAPI;
