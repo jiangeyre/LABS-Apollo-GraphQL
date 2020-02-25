@@ -41,7 +41,7 @@ fetch(url)
             magnitude: quake.properties.mag,
             location: quake.properties.place,
             when: dateString,
-            time: quake.properties.time,
+            cursor: quake.properties.time,
             id: quake.id
         };
         console.log(customData);
