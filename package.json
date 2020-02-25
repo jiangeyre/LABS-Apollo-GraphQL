@@ -1,0 +1,23 @@
+{
+  "name": "labs-apollo-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangeyre/LABS-Apollo-GraphQL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangeyre/LABS-Apollo-GraphQL/issues"
+  },
+  "homepage": "https://github.com/jiangeyre/LABS-Apollo-GraphQL#readme",
+  "dependencies": {
+    "apollo-server": "^2.10.1",
+    "graphql": "^14.6.0"
+  }
+}
