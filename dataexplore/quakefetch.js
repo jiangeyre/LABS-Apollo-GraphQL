@@ -13,7 +13,12 @@ fetch(url)
         const date = new Date(quake.properties.time)
         const year = date.getFullYear();
         const month = monthName(date.getMonth());
-        
+        const day = date.getDate();
+        const hour = date.getHours();
+        const minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes;
+        const seconds = date.getSeconds();
+        const dateString = `${month} ${day}, ${year} at ${hour}:${minute} and ${seconds} seconds`;
+        const timestamp = quake.properties.time;
         
         function monthName(ind) {
             const monthLegend = {
