@@ -29,6 +29,31 @@ class UserAPI extends DataSource {
         })
         return theUser[index];
     }
+
+    async saveRecord({recordId}) {
+        const userId = this.context.user.id;
+        if(!userId) {
+            console.log("No user on context")
+        } else {
+            console.log("There is a user on context")
+        }
+
+        const usercheck = this.store.users.map(user => {
+            if(userId == user.id) {
+                user.records.push({id: recordId})
+                return user
+            }
+        })
+
+        let users = [];
+        await usercheck.forEach(ele => {
+            if(ele) {
+                users.push(ele)
+            }
+        })
+
+        return users[0].records.length > 4 ? users[0].records : 'Oh no!'
+    }
 }
 
 module.exports = UserAPI;
