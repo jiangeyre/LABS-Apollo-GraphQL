@@ -22,7 +22,7 @@
     "apollo-datasource-rest": "^0.7.0",
     "apollo-server": "^2.10.1",
     "graphql": "^14.6.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.2"
   }
 }
