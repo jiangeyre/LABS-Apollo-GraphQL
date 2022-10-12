@@ -20,7 +20,7 @@
   "dependencies": {
     "apollo-datasource": "^0.7.0",
     "apollo-datasource-rest": "^0.7.0",
-    "apollo-server": "^2.10.1",
+    "apollo-server": "^2.25.4",
     "graphql": "^14.6.0",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.2"
